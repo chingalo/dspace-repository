@@ -1,5 +1,53 @@
 BEST DIALOGUE REPOSITORY
 
-Prerequisties
+Prerequisite:
+
+-OpenJDK 7+ or Oracle Java JDK 7
+-Apache Maven 3.0.5 or later
+-Apache Ant 1.8 or later
+-PostgreSQL 9.0 or later
+-Apache Tomcat 7 or later
+-git 1.9.1 or later
+
+Installation procedures:
+
+1. Database configurations
+    -Create the database user (dspace)
+        -run sudo su postgres
+        -run createuser -U postgres -d -A -P dspace
+    -Allow the database user (dspace) to connect to the database
+        -Edit file '/etc/postgresql/9.3/main/pg_hba.conf'
+            -add line 'local all dspace md5'
+        -Restart postgresql
+    -Create the DSpace Database
+        -createdb -U dspace -E UNICODE dspace
+
+2. Build dspace webapps
+    -Clone projects source file into your development folder
+        -Run the following command on terminal :
+            git clone https://github.com/bestdialogdspace/dspace.git dspace-source
+        -Change directory into dspace-source
+        -Specify dpsace installation folder[dspace] by edit file 'build.properties' on 'dspace.install.dir' value, by
+        default it '/dspace' but make sure dpsace installation folder[dspace] you specified exit and has all permissions
+        -Run sudo mvn package, then change directory to '/dspace/target/dspace-installer'
+        -Run sudo ant fresh_install
+3. Configure tomcat to access dpace webapps
+    -Change directory to [tomacat installtion folder]/conf/
+    -Edit server.xml by inserting  the following chunk of text just above the closing </Host>
+        <!-- Define a new context path for all DSpace web apps -->
+        <Context path="/xmlui" docBase="/dspace/webapps/xmlui"/>
+        <Context path="/rest" docBase="/dspace/webapps/sword"/>
+        <Context path="/oai"   docBase="/dspace/webapps/oai"/>
+        <Context path="/jspui" docBase="/dspace/webapps/jspui"/>
+    **Note on docBase attribute, "/dspace" is default installation folder[dspace] for dspace**
+    -restart tomcat server
+
+4. Test on browser
+    -http://localhost:8080/xmlui
+    -http://localhost:8080/jspui
+
+5. Further Reading/ Documentations
+    -follow (https://wiki.duraspace.org/display/DSDOC5x/DSpace+5.x+Documentation)
+
 
 
