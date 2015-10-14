@@ -1,0 +1,68 @@
+
+.starter-template {
+  padding: 100px 15px;
+  text-align: center;
+}
+nav{
+	background-color:#76c7c0;
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+  padding-top: 70px;
+  background-color:#e3e3e3;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 155px; /* .push must be the same height as .footer */
+}
+.navbar-bottom {
+	min-height: 300px;
+	margin-top: 100px;
+	background-color: #28364f;
+	padding-top: 35px;
+	color:#FFFFFF;
+	background-color:#76c7c0;
+	margin-bottom: 0;
+}
+.navbar-bottom2 {
+	background-color: #6ab3ac;
+	color:#FFFFFF;
+	margin-bottom: 0;
+}
+.navbar{
+	border:none;
+	border-radius:0;
+}
+.navbar-default .navbar-nav>li>a{
+	color:white;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	background-color: #528b85;
+	color:white;
+}
+.footer-h1,.footer-h2,.footer-more{
+	color:#538c86;
+}
+.footer-content{
+	color:black;
+}
+.artifacts .panel-body{
+	height:200px;
+}
+.artifacts .panel-footer{
+	height:50px;
+	background-color:#62b9b0;
+	color:white;
+	text-align: center;
+	font-size:20px;
+}

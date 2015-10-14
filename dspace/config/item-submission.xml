@@ -178,7 +178,7 @@
    
    <!--This "traditional" process defines the DEFAULT item submission process-->
    <submission-process name="traditional">
-     
+
      <!--Uncommment to display the SAMPLE step as your first step-->
      <!--<step id="sample"/>-->
 
